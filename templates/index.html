@@ -1,0 +1,180 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <script
+      type="text/javascript"
+      src="{% static 'javascript/javascript.js'%}"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link href="https://www.vecteezy.com/" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,700"
+      rel="stylesheet"
+    />
+    <title>Web Profile</title>
+    <link
+      rel="icon"
+      href="https://e7.pngegg.com/pngimages/527/663/png-clipart-logo-person-user-person-icon-rectangle-photography.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="a home">
+        <a href="#intro_saya">HOME</a>
+      </div>
+      <div class="a about">
+        <a href="#tentang_saya">TENTANG SAYA</a>
+      </div>
+      <div class="a hobby">
+        <a href="#hobby">HOBBY</a>
+      </div>
+      <div class="a quotes">
+        <a href="#quotes_saya">QUOTES</a>
+      </div>
+      <div class="sosmed">
+        <a>SOCIAL MEDIA</a>
+        <nav>
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+
+          <ul class="menu__list">
+            <li>
+              <a
+                href="https://www.instagram.com/_fredrikpakpahann/"
+                target="_blank"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a href="https://wa.link/hepxl5" target="_blank">WhatsApp</a>
+            </li>
+            <li>
+              <a
+                href="www.linkedin.com/in/fredrik-pakpahan-846536221"
+                target="_blank"
+                >Linkedin</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="landing-page" id="intro_saya">
+      <div class="latar">
+        <div class="intro-container">
+          <h1 class="intro">{{feature_1.intro}}</h1>
+          <h1 class="intro">{{feature_1.content}}</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="tentang" id="tentang_saya">
+      <div class="tentang-kiri">
+        <img
+          class="tentang-foto"
+          src="{% static 'image/IMG-20230131-WA0012.jpg'%}"
+        />
+      </div>
+      <div class="tentang-kanan">
+        <h2>{{feature_2.intro}}</h2>
+        <a>{{feature_2.content}}</a>
+      </div>
+    </div>
+
+    <con-bod>
+      <h1 class="hobby-judul" id="hobby">HOBBY</h1>
+      <div class="container">
+        {%for feature in features%}
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              {%if feature.photo%}
+              <img src="{% static 'image/' %}{{feature.photo}}" />
+              <h3>{{feature.intro}}</h3>
+              {%endif%}
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>{{feature.content}}</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </con-bod>
+
+    <div class="closing" id="quotes_saya">
+      <h1>{{feature_3.intro}}</h1>
+      <h2>{{feature_3.content}}</h2>
+      <div class="btn-contactme">
+        <button class="open-button" onclick="openform()">Hubungi Saya</button>
+
+        <div class="form-metu" id="formsaya">
+          <div class="div">
+            <h1 style="font-family: 'Raleway'" class="headline">
+              Hubungi Saya
+            </h1>
+            <form method="POST" class="=form-container">
+              {% csrf_token %}
+              <div class="inputan">
+                <input
+                  type="text"
+                  id="nama"
+                  name="nama"
+                  placeholder="Nama"
+                  style="font-family: 'Bitter'"
+                  class="nama"
+                />
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  style="font-family: 'Bitter'"
+                  class="email"
+                />
+
+                <textarea
+                  type="text"
+                  id="pesan"
+                  name="pesan"
+                  placeholder="Pesan"
+                  style="height: 200px; font-family: 'Bitter'"
+                  class="pesan"
+                ></textarea>
+              </div>
+
+              <div class="closing-form">
+                <button type="submit" name="submit" class="btn submit">
+                  Kirimkan
+                </button>
+                <button type="button" class="btn cancel" onclick="closeform()">
+                  Tutup
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-text">
+        <h2>Copyright @ Fredrik Sahalatua Pakpahan</h2>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+    height: 800px;
+    background-image: linear-gradient(to bottom right, #bdc3c7, #2c3e50);
+}
+
+.response{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tombol_kembali{
+    cursor: pointer;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+
+.tombol_kembali:hover{
+    background-color: darkgray;
+    transition: 0.5s;
+}
+
+.tombol_kembali a{
+    padding: 20px;
+    color: black;
+}
