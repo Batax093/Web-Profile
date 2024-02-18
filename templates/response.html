@@ -12,6 +12,12 @@
       href="https://fonts.googleapis.com/css?family=Raleway:300,700"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter&family=Montserrat&family=Poppins:wght@200;400;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="icon"
       href="https://e7.pngegg.com/pngimages/527/663/png-clipart-logo-person-user-person-icon-rectangle-photography.png"
@@ -25,6 +31,22 @@
       <div class="tombol_kembali">
         <a href="{{index_url}}">Kembali ke Home Page</a>
       </div>
+    </div>
+    <div class="tabel">
+      <table style="width: 100%">
+        <tr class="header" style="width: 100%">
+          <td>Nama</td>
+          <td>Email</td>
+          <td>Pesan</td>
+        </tr>
+        {% for form in forms %} {% csrf_token %}
+        <tr class="content">
+          <td>{{form.nama}}</td>
+          <td>{{form.email}}</td>
+          <td>{{form.pesan}}</td>
+        </tr>
+        {% endfor %}
+      </table>
     </div>
   </body>
 </html>

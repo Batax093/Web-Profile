@@ -3,14 +3,19 @@ a{
     color: #000;
 }
 
+html{
+    height: 760px;
+}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
     font-size: 35px;
-    height: 800px;
+    height: 90%;
     background-image: linear-gradient(to bottom right, #bdc3c7, #2c3e50);
 }
 
@@ -41,3 +46,37 @@ body{
     padding: 20px;
     color: black;
 }
+
+.tabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 1300px;
+}
+
+.header td{
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+}
+
+.content tr{
+    font-weight: 300px;
+}
+
+tr, td{
+    text-align: center;
+    background-color: gray;
+}
+
+td{
+    font-family: "Bitter";
+    font-size: 15px;
+    padding: 10px;
+}
+
+table{
+    width: 100%;
+    box-shadow: 0 0 0 0.8 black;
+}
+
